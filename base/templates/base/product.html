@@ -1,0 +1,67 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'styles/product.css' %}">
+<div class="comment-container">
+    <div class="comment-box-container">
+        <div class="product-data-container">
+            <div class="product-info">
+                <div class="product-image-container">
+                    <img src="{{ product_item.image.url }}" alt="Product Image" style="width: 600px; height: 400px;">
+                </div>
+                <div class="product-info-container">
+                    <div class="product-info-header">
+                        <div class="product-name">
+                            <p id="product-name">{{ product_item.name }}</p>
+                            <p id="product-host">{{ product_item.host }}</p>
+                        </div>
+                    </div>
+                    <div class="product-info-body">
+                        <div class="product-price">
+                            <p id="product-price">${{ product_item.price }} </p>
+                        </div>
+                        <div class="product-additional-info">
+                            <p>Brand:</p>
+                            <p>Weight:</p>
+                            <p>Material:</p>
+                            <p>Color:</p>
+                        </div>
+                        <div class="product-description">
+                            <p id="product-description-writing">About this item:</p>
+                            <p>{{ product_item.description }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="comment-wrapper-container">
+            <div class="comment-wrapper">
+                <h3>Top Reviews</h3>
+
+                {% for comment in product_comments %}
+                <div class="comment-info">
+                    {% if request.user == comment.user %}
+                    <a href="{% url 'delete-comment' comment.id %}">Delete</a>
+                    {% endif %}
+                    <small>@{{ comment.user }} {{ comment.created|timesince }} ago</small>
+                    <p>{{ comment.body }}</p>
+                    <hr>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% if request.user.is_authenticated %}
+        <div class="comment-form">
+            <form method="POST" action="">
+                {% csrf_token %}
+                <input type="text" name="body" placeholder="Write your comment here...">
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+        {% endif %}
+    </div>
+</div>
+
+{% endblock %}

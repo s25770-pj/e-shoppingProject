@@ -1,0 +1,147 @@
+main {
+    color: black;
+}
+
+.home-container {
+    display: grid;
+    grid-template-columns: 1fr 9fr;
+    grid-gap: 20px;
+    padding: 20px;
+}
+
+.browser-container {
+    min-width: 130px;
+}
+
+.browser-container a {
+    color: black;
+}
+
+.browser-option a {
+    font-size: small;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.browser-option a:hover {
+    text-decoration: underline;
+}
+
+.product-count {
+    display: flex;
+    justify-content: center;
+}
+
+.product-count h5 {
+    width: 15%;
+    font-size: medium;
+    font-weight: bold;
+}
+
+.product-item-container {
+    border: 1px solid #ccc;
+    width: 225px;
+    height: 310px;
+}
+
+.product-item {
+    position: relative;
+    width: 90%;
+    height: 140px;
+    padding-left: 15px;
+    padding-top: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.product-item a {
+    font-weight: bold;
+    font-size: small;
+    color: #008ba4;
+    width: 100%;
+    overflow: hidden;
+}
+
+.product-name-container {
+    min-height: 10%;
+    max-height: 50%;
+    overflow: hidden;
+}
+
+.product-image-container a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.product-image {
+    width: 225px;
+    height: 160px;
+}
+
+.product-name {
+    height: auto;
+    font-size: small;
+    margin: 0 0 5px;
+    font-weight: bold;
+    overflow: hidden;
+}
+
+.product-name a {
+    display: block;
+    width: 96%;
+    max-height: 80px;
+    font-size: small;
+    text-decoration: none;
+}
+
+.product-name a:hover {
+    color: #d97701;
+    text-decoration: underline;
+}
+
+.product-edit-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    position: absolute;
+    z-index: 1;
+    height: 30px;
+    bottom: 10px;
+    margin-right: 8%;
+    width: 92%;
+}
+
+.product-edit-container a {
+    text-decoration: none !important;
+    float: right;
+    width: 20px;
+    padding-left: 10px;
+}
+
+.edit-image {
+    width: 13px;
+    height: 13px;
+}
+
+.edit-image:hover {
+    width: 18px;
+    height: 18px;
+}
+
+.grid-items {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-gap: 20px;
+}
+
+.product-item small {
+    color: #888;
+}
+
+.product-price {
+    color: orangered !important;
+    text-decoration: none;
+}

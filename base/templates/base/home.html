@@ -1,0 +1,76 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block content %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping App</title>
+    <link rel="stylesheet" href="{% static 'styles/home.css' %}">
+</head>
+<body>
+    <div class="home-container">
+        <div class="browser-container">
+            <h3>Browse By Categories</h3>
+            <hr>
+            <div class="browser-option">
+                <a href="{% url 'home' %}">All Products ({{ total_products }})</a>
+            </div>
+
+            {% for category in categories %}
+                <div class="browser-option">
+                    <a href="{% url 'home' %}?q={{ category.name }}">{{ category.name }} ({{ category.product_set.count }})</a>
+                </div>
+            {% endfor %}
+        </div>
+
+        <div class="product-grid">
+            <div class="product-count">
+                <h5>Products Available: {{ product_count }}</h5>
+            </div>
+            <div class="grid-items">
+                {% for product in products %}
+                    <div class="product-item-container">
+                        <div class="product-image-container">
+                            <a href="{% url 'product' product.id %}">
+                                <img src="{{ product.image }}" alt="Product Image" class="product-image">
+                            </a>
+                        </div>
+                        <div class="product-item">
+                            <div class="product-name-container">
+                                <div class="product-name">
+                                    <a href="{% url 'product' product.id %}">{{ product.name }}</a>
+                                </div>
+                            </div>
+                            <div>
+                                <a href="{% url 'product' product.id %}" class="product-price">{{ product.price }} $ </a>
+                            </div>
+                            <div>
+                                <small>{{ product.category.name }}</small>
+                            </div>
+                            {% if request.user == product.host %}
+                            <div class="product-edit-container">
+                                <div>
+                                    <a href="{% url 'delete-product' product.id %}">
+                                        <img src="{% static 'images/delete.png' %}" alt="Delete" class="edit-image" id="delete-image">
+                                    </a>
+                                </div>
+                                <div>
+                                    <a href="{% url 'update-product' product.id %}" >
+                                        <img src="{% static 'images/edit.png' %}" alt="Edit" class="edit-image" id="update-image">
+                                    </a>
+                                </div>
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+{% endblock %}

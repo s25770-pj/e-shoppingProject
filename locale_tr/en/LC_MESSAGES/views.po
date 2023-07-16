@@ -1,0 +1,18 @@
+msgid ""
+msgstr ""
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "user does not exist"
+msgstr "user does not exist"
+
+msgid "Username OR password does not exist"
+msgstr "Username OR password does not exist"
+
+msgid "An error occured during registration"
+msgstr "An error occured during registration"
+
+msgid "You are not allowed here"
+msgstr "You are not allowed here"

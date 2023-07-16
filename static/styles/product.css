@@ -1,0 +1,126 @@
+* {
+    font-family: "Amazon Ember", Arial, sans-serif;
+}
+
+p {
+    padding-top: 10px;
+    margin-bottom: 10px;
+}
+
+hr {
+    color: lightgray;
+}
+
+.product-data-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-info {
+    display: flex;
+    flex-direction: row;
+    width: 1500px;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid lightgray;
+}
+
+.product-info-header {
+    border-bottom: 1px solid lightgray;
+}
+
+#product-name {
+    font-size: 24px;
+}
+
+#product-host {
+    font-size: small;
+}
+
+#product-price {
+    margin-top: 0;
+    font-size: x-large;
+    font-weight: bold;
+    color: orangered;
+}
+
+.product-additional-info {
+    border-bottom: 1px solid lightgray;
+}
+
+.product-additional-info p{
+    margin-top: 1px;
+    margin-bottom: 1px;
+    font-size: medium;
+}
+
+.product-description p{
+    font-size: medium;
+    margin-top: 1px;
+    margin-bottom: 1px;
+}
+
+#product-description-writing {
+    font-weight: bold;
+    font-size: large !important;
+}
+
+.product-info-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 600px;
+    width: auto;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.comment-wrapper-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.comment-wrapper {
+    width: 50%;
+}
+
+.comment-info a {
+    text-decoration: none;
+    color: #008ba4;
+}
+
+.comment-info a:hover {
+    text-decoration: underline;
+}
+
+.comment-wrapper h3 {
+    border-bottom: 1px solid lightgray;
+}
+
+.comment-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.comment-form input {
+    text-align: center;
+    width: 93%;
+}
+
+.comment-form button {
+    padding: 6px 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #00a6c4;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.comment-form button:hover {
+    background-color: #0089a1;
+}
